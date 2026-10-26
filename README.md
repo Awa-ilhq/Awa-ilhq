@@ -15,7 +15,7 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
 <!-- ===================== TENTANG SAYA ===================== -->
-## 🌹 Tentang Saya
+## Tentang Saya
 
 <div align="center">
 
@@ -28,12 +28,12 @@
 
 </div>
 
-> 🔥 *Antusias pada pembuatan aplikasi web dan mobile modern, serta senang bereksperimen dengan teknologi baru.*
+> *Antusias pada pembuatan aplikasi web dan mobile modern, serta senang bereksperimen dengan teknologi baru.*
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
 <!-- ===================== TECH STACK & SKILLS ===================== -->
-## 🧰 Tech Stack & Skills
+## Tech Stack & Skills
 
 <div align="center">
 
@@ -74,7 +74,7 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
 <!-- ===================== GITHUB STATS ===================== -->
-## 📊 GitHub Stats
+## GitHub Stats
 
 <div align="center">
 
@@ -90,7 +90,7 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
 <!-- ===================== SNAKE ANIMATION ===================== -->
-## 🐍 Contribution Snake
+## Contribution Snake
 
 <div align="center">
 
@@ -101,7 +101,7 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
 <!-- ===================== KONTAK ===================== -->
-## 📫 Hubungi Saya
+## Hubungi Saya
 
 <div align="center">
 
@@ -117,7 +117,7 @@
 
 <br/><br/>
 
-<sub>🌹 Terima kasih sudah berkunjung! Mari berkolaborasi dan berkarya bersama 🌹</sub>
+<sub> Terima kasih sudah berkunjung! Mari berkolaborasi dan berkarya bersama </sub>
 
 </div>
 
