@@ -90,13 +90,22 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
 <!-- ===================== SNAKE ANIMATION ===================== -->
-## Contribution Snake
+## 🐍 Contribution Snake
 
 <div align="center">
 
-<img alt="Contribution Snake Animation" src="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/output/github-snake-dark.svg" width="100%" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/output/github-snake.svg" />
+  <img alt="Contribution Snake Animation" src="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/output/github-snake-dark.svg" />
+</picture>
 
 </div>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
+
+<!-- ===================== KONTAK ===================== -->
+## 📫 Hubungi Saya
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
