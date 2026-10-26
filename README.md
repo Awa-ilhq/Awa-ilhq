@@ -103,11 +103,11 @@
 <div align="center">
 
 <!-- GANTI: your.email@gmail.com dengan email asli Anda -->
-<a href="mailto:your.email@gmail.com">
+<a href="mailto:awa916749@gmail.com">
   <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
 </a>
 <!-- GANTI: your-linkedin-id dengan ID LinkedIn Anda (bagian akhir URL profil) -->
-<a href="https://www.linkedin.com/in/your-linkedin-id/">
+<a href="https://www.linkedin.com/in/m-awaudin-ilhaqqi-893600308/">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
 <a href="https://github.com/Awa-ilhq">
