@@ -78,8 +78,8 @@
 
 <div align="center">
 
-<img height="180" src="./profile/stats.svg" alt="GitHub Stats"/>
-<img height="180" src="./profile/top-langs.svg" alt="Top Languages"/>
+<img height="180" src="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/main/profile/stats.svg" alt="Public GitHub Repository Stats"/>
+<img height="180" src="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/main/profile/top-langs.svg" alt="Top Languages by Repository"/>
 
 <br/><br/>
 
