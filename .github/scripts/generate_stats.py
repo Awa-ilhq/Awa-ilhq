@@ -65,12 +65,20 @@ def fetch_repositories():
     ]
 
 
-def card_start(width, height, title):
+def card_start(width, height, title, subtitle):
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img">
 <title>{html.escape(title)}</title>
+<style>
+  text {{ font-family: 'Segoe UI', Ubuntu, sans-serif; }}
+  .title {{ fill: {TEXT}; font-size: 17px; font-weight: 600; }}
+  .subtitle {{ fill: {MUTED}; font-size: 11px; }}
+  .value {{ fill: {TEXT}; font-size: 25px; font-weight: 700; }}
+  .label {{ fill: {MUTED}; font-size: 12px; }}
+</style>
 <rect width="100%" height="100%" rx="8" fill="{BACKGROUND}" stroke="#30363d"/>
-<text x="24" y="34" fill="{TEXT}" font-family="Segoe UI, Ubuntu, sans-serif" font-size="18" font-weight="600">{html.escape(title)}</text>
-<line x1="24" y1="49" x2="{width - 24}" y2="49" stroke="#30363d"/>
+<text x="24" y="29" class="title">{html.escape(title)}</text>
+<text x="24" y="47" class="subtitle">{html.escape(subtitle)}</text>
+<line x1="24" y1="60" x2="{width - 24}" y2="60" stroke="#30363d"/>
 """
 
 
@@ -80,20 +88,29 @@ def stats_svg(repositories):
         ("Stars", sum(repo.get("stargazers_count", 0) for repo in repositories)),
         ("Forks", sum(repo.get("forks_count", 0) for repo in repositories)),
     ]
-    svg = [card_start(495, 150, "Public GitHub Stats")]
+    svg = [card_start(495, 190, "GitHub Stats", "Public, non-fork repositories")]
     column_width = 495 / len(metrics)
     for index, (label, value) in enumerate(metrics):
         x = column_width * index + column_width / 2
         svg.append(
-            f'<text x="{x:g}" y="91" text-anchor="middle" fill="{ACCENT}" '
-            f'font-family="Segoe UI, Ubuntu, sans-serif" font-size="26" '
-            f'font-weight="700">{value}</text>'
+            f'<text x="{x:g}" y="112" text-anchor="middle" class="value">'
+            f"{value:,}</text>"
         )
         svg.append(
-            f'<text x="{x:g}" y="116" text-anchor="middle" fill="{MUTED}" '
-            f'font-family="Segoe UI, Ubuntu, sans-serif" font-size="13">'
+            f'<text x="{x:g}" y="137" text-anchor="middle" class="label">'
             f"{html.escape(label)}</text>"
         )
+        if index < len(metrics) - 1:
+            separator_x = column_width * (index + 1)
+            svg.append(
+                f'<line x1="{separator_x:g}" y1="83" x2="{separator_x:g}" '
+                'y2="151" stroke="#30363d"/>'
+            )
+    svg.append(
+        f'<circle cx="24" cy="169" r="3" fill="{ACCENT}"/>'
+        f'<text x="34" y="173" class="subtitle">'
+        f"Stats from {len(repositories)} public repositories</text>"
+    )
     svg.append("</svg>")
     return "\n".join(svg)
 
@@ -108,7 +125,7 @@ def languages_svg(repositories):
     languages = sorted(
         language_counts.items(), key=lambda item: (-item[1], item[0])
     )[:5]
-    svg = [card_start(495, 190, "Top Languages by Repository")]
+    svg = [card_start(495, 190, "Top Languages", "Primary language by repository")]
     if not languages:
         svg.append(
             f'<text x="24" y="90" fill="{MUTED}" '
@@ -116,36 +133,31 @@ def languages_svg(repositories):
             "No public repositories with a primary language found.</text>"
         )
     else:
-        max_count = max(count for _, count in languages)
+        total_count = sum(language_counts.values())
         for index, (language, count) in enumerate(languages):
-            y = 73 + index * 23
+            y = 79 + index * 22
             color = LANGUAGE_COLORS.get(language, ACCENT)
             label = html.escape(language)
-            percentage = count * 100 / sum(language_counts.values())
+            repository_label = "repo" if count == 1 else "repos"
+            percentage = count * 100 / total_count
             svg.append(
-                f'<text x="24" y="{y}" fill="{TEXT}" '
-                f'font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">'
-                f"{label}</text>"
+                f'<text x="24" y="{y}" fill="{TEXT}" font-size="11">'
+                f"{label} <tspan fill=\"{MUTED}\">· {count} "
+                f"{repository_label}</tspan></text>"
             )
             svg.append(
-                f'<rect x="130" y="{y - 11}" width="260" height="8" rx="4" '
+                f'<text x="471" y="{y}" text-anchor="end" fill="{MUTED}" '
+                f'font-size="11">{percentage:.0f}%</text>'
+            )
+            svg.append(
+                f'<rect x="24" y="{y + 5}" width="447" height="5" rx="2.5" '
                 'fill="#21262d"/>'
             )
             svg.append(
-                f'<rect x="130" y="{y - 11}" '
-                f'width="{260 * count / max_count:.1f}" height="8" rx="4" '
+                f'<rect x="24" y="{y + 5}" '
+                f'width="{447 * percentage / 100:.1f}" height="5" rx="2.5" '
                 f'fill="{color}"/>'
             )
-            svg.append(
-                f'<text x="465" y="{y}" text-anchor="end" fill="{MUTED}" '
-                f'font-family="Segoe UI, Ubuntu, sans-serif" font-size="12">'
-                f"{percentage:.0f}%</text>"
-            )
-        svg.append(
-            f'<text x="24" y="176" fill="{MUTED}" '
-            'font-family="Segoe UI, Ubuntu, sans-serif" font-size="10">'
-            "Based on primary languages of non-fork public repositories</text>"
-        )
     svg.append("</svg>")
     return "\n".join(svg)
 
