@@ -73,22 +73,6 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
 
-<!-- ===================== GITHUB STATS ===================== -->
-## GitHub Stats
-
-<div align="center">
-
-<img height="180" src="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/main/profile/stats.svg" alt="Public GitHub Repository Stats"/>
-<img height="180" src="https://raw.githubusercontent.com/Awa-ilhq/Awa-ilhq/main/profile/top-langs.svg" alt="Top Languages by Repository"/>
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com/?user=Awa-ilhq&hide_border=true&background=0d0d12&ring=ff3b5c&fire=ff7a00&currStreakLabel=ff3b5c&currStreakNum=ffffff&sideLabels=ff3b5c&sideNums=ffffff&dates=9a9a9a" alt="GitHub Streak"/>
-
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d0d12,50:ff3b5c,100:0d0d12&height=3" width="100%" alt="divider"/>
-
 <!-- ===================== SNAKE ANIMATION ===================== -->
 ## 🐍 Contribution Snake
 
